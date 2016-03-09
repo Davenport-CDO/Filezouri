@@ -1,0 +1,48 @@
+﻿@Master['Master.sshtml']
+@Section['Content']
+    <a href="/upload">Upload a New File</a>
+
+    <table id="filetable" style="width:75%;margin: 0 auto;">
+        <thead>
+            <tr>
+                <th>Filename</th>
+                <th>Size</th>
+                <th>Size (bytes)</th>
+                <th>Date Modified</th>
+            </tr>
+        </thead>
+    </table>
+
+<script type="text/javascript">
+    $(document).ready(function ()
+    {
+        $('#filetable').DataTable({
+            ajax: {
+                url: '/files.json',
+                dataSrc: ''
+            },
+            columns: [
+                { data: "name" },
+                { data: "length" },
+                { data: "realLength" },
+                { data: "date" }
+            ],
+            "dom": "frtiSp",
+            "paging": false,
+            "deferRender": true,
+            "pageLength": 60,
+            "aoColumnDefs": [
+                 {
+                     "aTargets": [0], // Column to target
+                     "mRender": function (data, type, full) {
+                         // 'full' is the row's data object, and 'data' is this column's data
+                         // e.g. 'full[0]' is the comic id, and 'data' is the comic title
+                         return '<a href="/download/' + data + '">' + data + '</a>';
+                     }
+                 }
+            ]
+        });
+    });
+</script>
+
+@EndSection

@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+
+<html>
+	<head>
+        <title>Filezouri - Dump your Files</title>
+        <script src="Content/jquery-2.2.1.min.js"></script>
+        <script src="Content/jquery.dataTables.min.js"></script>
+
+        <script src="Content/dropzone.js"></script>
+
+        <link href="Content/style.css" rel="stylesheet" />
+        <link href="Content/dropzone.css" rel="stylesheet" />
+        <link href="Content/jquery.dataTables.min.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        @Section['Content']
+    </body>
+</html>

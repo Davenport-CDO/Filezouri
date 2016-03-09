@@ -1,0 +1,5 @@
+﻿@Master['Master.sshtml']
+@Section['Content']
+    <h1>Hey, drop a file!</h1>
+    <form action="/upload" class="dropzone"></form>
+@EndSection
